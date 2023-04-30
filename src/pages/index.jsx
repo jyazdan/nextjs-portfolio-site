@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -40,28 +41,29 @@ function handleDownload() {
 
 const projects = [
   {
-    id: 1,
+    id: 2,
     heading: 'Highlight Project',
-    title: 'Full Stack Real Estate Marketplace',
-    description: `React.js application that allows users to list their Real Estate for sale on the platform/marketplace. 
-    Implemented Firebase for Email and Google Authentication so users can post listings while logged into the app`,
-    link: `https://real-estate-marketplace-jyazdan.vercel.app/`,
+    title: 'GameHub',
+    description: `React-based web application that utilizes Chakra UI for styling and the RAWG.io API to provide detailed information about video games. GameHub offers a sleek and intuitive interface for browsing through a vast array of game data.`,
+    link: 'https://game-hub-three-iota.vercel.app/',
   },
   {
     id: 2,
     heading: 'Highlight Project',
-    title: 'Full Stack Instagram Clone',
-    description: `Clone of popular social media network Instagram, built with Next.js, Tailwind CSS, Firebase v9, 
-    NextAuth, Recoil. Firebase allows for Realtime Database and Image Hosting to allow users to post on the application`,
-    link: `https://instagram-clone-jyazdan.vercel.app/auth/signin?callbackUrl=https%3A%2F%2Finstagram-clone-jyazdan.vercel.app%2F`,
+    title: 'Full Stack Real Estate Marketplace',
+    description: `React.js-based web application that enables users to log in and post real estate properties for sale or rent. 
+    With the ability to upload pictures of the property and display its location on a map using the address, 
+    this app offers a seamless and user-friendly experience for buyers and sellers.`,
+    link: `https://real-estate-marketplace-jyazdan.vercel.app/`,
   },
   {
     id: 3,
     heading: 'Highlight Project',
-    title: 'GameHub',
-    description: `Project built with React.js and Chakra UI that displays current games on the market using an API. Deployed and hosted on Vercel`,
-    link: 'https://game-hub-three-iota.vercel.app/',
+    title: 'Full Stack Instagram Clone',
+    description: `Next.js-based social media application built with Tailwind CSS, Firebase v9, and NextAuth for authentication. This clone of the popular social media network, Instagram, offers a familiar and feature-rich user experience, complete with posting, liking, and commenting functionality.`,
+    link: `https://instagram-clone-jyazdan.vercel.app/auth/signin?callbackUrl=https%3A%2F%2Finstagram-clone-jyazdan.vercel.app%2F`,
   },
+  
 ]
 
 function MailIcon(props) {
@@ -296,28 +298,32 @@ function Photos() {
   )
 }
 
-export default function Home({ articles }) {
+export default function Home() {
   return (
     <>
       <Head>
         <title>
-          Spencer Sharp - Software designer, founder, and amateur astronaut
+          Jonathan Yazdanpanah - Software engineer, university graduate, and car enthusiast.
         </title>
         <meta
           name="description"
-          content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="I’m Jonathan, a results-driven software engineer with a passion for
+          developing cutting-edge technologies. Based in New York City, I
+          specialize in creating innovative solutions that solve complex
+          problems and drive business growth."
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software engineer, founder, and car enthusist.
+            Software engineer, university graduate, and tech enthusiast.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Jonathan, a results-driven software engineer with a passion for
-            developing cutting-edge technologies. Based in New York City, I
-            specialize in creating innovative solutions that solve complex
-            problems and drive business growth.
+          I'm Jonathan, a results-driven software engineer based in New York City with a passion for developing 
+          cutting-edge technologies. As a tech enthusiast, I stay up-to-date with the latest trends and advancements 
+          in the field to create innovative solutions that solve complex problems and drive business growth. 
+          With my expertise in software engineering, I specialize in delivering high-quality, 
+          user-friendly solutions that exceed expectations. 
           </p>
           <div className="mt-6 flex items-center gap-6">
             <SocialLink

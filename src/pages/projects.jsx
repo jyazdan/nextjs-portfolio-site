@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -8,6 +9,7 @@ import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
+import { GitHubIcon } from '@/components/SocialIcons'
 
 const projects = [
   {
@@ -17,31 +19,37 @@ const projects = [
     link: { href: 'https://github-finder-jyazdan.vercel.app/', label: 'View Project' },
   },
   {
-    name: 'Animaginary',
+    name: 'React Notes',
     description:
       `Built using React.js and Bootstrap, this app allows users to create notes with ease by adding a title, tag, and body.
       With the added ability to filter notes by tags or keyword search, users can quickly locate and access the notes they need.`,
     link: { href: 'https://react-notes-app-ten.vercel.app/', label: 'View Project' },
   },
   {
-    name: 'Instagram Clone',
+    name: 'GameHub',
     description:
-      'Clone of popular social media network Instagram, built with Next.js, Tailwind CSS, Firebase v9, and NextAuth.',
+      'React-based web application that utilizes Chakra UI for styling and the RAWG.io API to provide detailed information about video games. GameHub offers a sleek and intuitive interface for browsing through a vast array of game data.',
+    link: { href: 'https://game-hub-jyazdan.vercel.app/', label: 'View Project' },
+    logo: logoOpenShuttle,
+  },
+  {
+    name: 'Full Stack Instagram Clone',
+    description:
+      'Next.js-based social media application built with Tailwind CSS, Firebase v9, and NextAuth for authentication. This clone of the popular social media network, Instagram, offers a familiar and feature-rich user experience, complete with posting, liking, and commenting functionality.',
     link: { href: 'https://instagram-clone-jyazdan.vercel.app/auth/signin?callbackUrl=https%3A%2F%2Finstagram-clone-jyazdan.vercel.app%2F', label: 'View Project' },
   },
   {
-    name: 'cosmOS',
+    name: 'Real Estate Marketplace',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'React.js-based web application that enables users to log in and post real estate properties for sale or rent. With the ability to upload pictures of the property and display its location on a map using the address, this app offers a seamless and user-friendly experience for buyers and sellers.',
+    link: { href: 'https://real-estate-marketplace-jyazdan.vercel.app/', label: 'View Project' },
   },
+  
   {
-    name: 'OpenShuttle',
+    name: 'Wordle Clone',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'A fun and engaging web application that brings the popular word game, Wordle, to life. Built using HTML, CSS, and Javascript, this clone offers a familiar and feature-rich user experience that closely mirrors that of the original game.',
+    link: { href: 'https://worldle-clone-jyazdan.vercel.app/', label: 'View Project' },
   },
 ]
 
@@ -60,7 +68,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
+        <title>Projects - Jonathan Yazdanpanah</title>
         <meta
           name="description"
           content="Things I’ve made trying to put my dent in the universe."
@@ -68,7 +76,15 @@ export default function Projects() {
       </Head>
       <SimpleLayout
         title="Things I’ve made trying to put my dent in the universe."
-        intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        intro={
+          <>
+            {"I've worked on tons of little projects over the years but these are the ones that I'm most proud of. Many of them are available to view on my"}{" "}
+            <a className='text-teal-500' href="https://github.com/jyazdan" target="_blank" rel="noopener noreferrer">
+              Github profile
+            </a>
+            {", so if you see something that piques your interest, check out the code!"}
+          </>
+        }
       >
         <ul
           role="list"
