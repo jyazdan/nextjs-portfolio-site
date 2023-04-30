@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
 
 import { Card } from '@/components/Card'
@@ -29,7 +30,7 @@ export default function Uses() {
   return (
     <>
       <Head>
-        <title>Uses - Spencer Sharp</title>
+        <title>Uses - Jonathan Yazdanpanah</title>
         <meta
           name="description"
           content="Software I use, gadgets I love, and other things I recommend."
@@ -41,75 +42,65 @@ export default function Uses() {
       >
         <div className="space-y-20">
           <ToolsSection title="Workstation">
-            <Tool title="16” MacBook Pro, M1 Max, 64GB RAM (2021)">
-              I was using an Intel-based 16” MacBook Pro prior to this and the
-              difference is night and day. I’ve never heard the fans turn on a
-              single time, even under the incredibly heavy loads I put it
-              through with our various launch simulations.
+            <Tool title="13” MacBook Pro, Intel i5, 16GB RAM (2017)">
+            The very first proper computer that I purchased back in college. 
+            It holds a special place in my heart since I wrote my very first lines of code on this machine. 
+            Now, it's my go-to computer for working on the go, and it's been with me through all of my coding adventures.  
             </Tool>
-            <Tool title="Apple Pro Display XDR (Standard Glass)">
-              The only display on the market if you want something HiDPI and
-              bigger than 27”. When you’re working at planetary scale, every
-              pixel you can get counts.
+            <Tool title="Custom Gaming PC, 32GB RAM, 3060 GPU, AMD Ryzen 5 5600X">
+            This was the very first computer that I ever built, and I meticulously picked out every single part. 
+            Not only was it an amazing learning experience, but it's also become my main machine for web development. 
+            Its powerful specs and lightning-fast performance make it the ideal tool for tackling complex coding projects with ease. 
+            From coding to gaming, this PC can handle anything I throw at it, and it's been an indispensable part of my development journey.  
             </Tool>
-            <Tool title="IBM Model M SSK Industrial Keyboard">
-              They don’t make keyboards the way they used to. I buy these any
-              time I see them go up for sale and keep them in storage in case I
-              need parts or need to retire my main.
+            <Tool title="27” Gaming Monitor by Dark Matter, 240Hz (Dual Setup)">
+              Ever since I switched to a monitor with a refresh rate of 120Hz or higher, I simply couldn't go back to anything else. 
+              As a front-end developer, having a high-performance monitor is essential for creating and optimizing responsive applications. 
+              I firmly believe that using a single monitor for front-end development should be considered a crime.
             </Tool>
-            <Tool title="Apple Magic Trackpad">
-              Something about all the gestures makes me feel like a wizard with
-              special powers. I really like feeling like a wizard with special
-              powers.
+            <Tool title="Logitech MX Keys">
+            The Logitech MX Keys has become my go-to keyboard for boosting productivity at work. 
+            Its ergonomic design, responsive keys, and intuitive layout make it easy to work efficiently, no matter the task. 
             </Tool>
-            <Tool title="Herman Miller Aeron Chair">
-              If I’m going to slouch in the worst ergonomic position imaginable
-              all day, I might as well do it in an expensive chair.
+            <Tool title="Logitech MX Master">
+            Its comfortable design and long battery life make it the perfect tool for all-day use.
+             While it has many advanced features, I mainly use it for its precision and ease of use, allowing me to work efficiently and effectively. 
+             Whether I'm browsing the web or working on a project, the MX Master is the ideal tool for getting the job done quickly and comfortably.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Development tools">
-            <Tool title="Sublime Text 4">
-              I don’t care if it’s missing all of the fancy IDE features
-              everyone else relies on, Sublime Text is still the best text
-              editor ever made.
+            <Tool title="Visual Studio Code">
+            Probably the absolute best and has become the industry standard for developers. 
+            With a ton of extensions and plugins, I can customize it to fit my exact needs, making me more productive and efficient.
+             From debugging to syntax highlighting, Git integration, and code completion, VS Code has everything I need to create amazing applications.
             </Tool>
-            <Tool title="iTerm2">
-              I’m honestly not even sure what features I get with this that
-              aren’t just part of the macOS Terminal but it’s what I use.
+            <Tool title="Git">
+            With Git, I can easily manage and track changes to my codebase, allowing me to work more efficiently and collaborate seamlessly with other developers. 
+            Whether I'm working on a large project or a small one, Git helps me keep track of changes and maintain a clear and organized development history. 
             </Tool>
-            <Tool title="TablePlus">
-              Great software for working with databases. Has saved me from
-              building about a thousand admin interfaces for my various projects
-              over the years.
+            <Tool title="Vercel">
+            With Vercel, I can easily deploy my applications to the cloud with just a few clicks, allowing me to focus on what really matters - writing high-quality code. 
+            Its intuitive user interface and powerful integrations make it easy to deploy and manage my projects, 
+            while its advanced features ensure that my applications are always fast, reliable, and scalable.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Design">
             <Tool title="Figma">
-              We started using Figma as just a design tool but now it’s become
-              our virtual whiteboard for the entire company. Never would have
-              expected the collaboration features to be the real hook.
+            As a front-end developer, Figma is an essential tool in my workflow. 
+            When I receive design files in Figma, I can easily translate those designs into fully functional front-end applications. 
+            With Figma, I can accurately measure spacing, font sizes, and other design elements, ensuring that my final application is pixel-perfect and looks exactly like the original design.
             </Tool>
           </ToolsSection>
-          <ToolsSection title="Productivity">
-            <Tool title="Alfred">
-              It’s not the newest kid on the block but it’s still the fastest.
-              The Sublime Text of the application launcher world.
+          <ToolsSection title="Operating systems">
+            <Tool title="Windows">
+            Since I was young, Windows has been my go-to operating system. It's been my mainstay for a long time now and continues to be my primary OS for my main machine. 
+            Its familiar interface and robust features make it an ideal choice for all my computing needs, whether I'm developing software, gaming, or just browsing the web.
             </Tool>
-            <Tool title="Reflect">
-              Using a daily notes system instead of trying to keep things
-              organized by topics has been super powerful for me. And with
-              Reflect, it’s still easy for me to keep all of that stuff
-              discoverable by topic even though all of my writing happens in the
-              daily note.
-            </Tool>
-            <Tool title="SavvyCal">
-              Great tool for scheduling meetings while protecting my calendar
-              and making sure I still have lots of time for deep work during the
-              week.
-            </Tool>
-            <Tool title="Focus">
-              Simple tool for blocking distracting websites when I need to just
-              do the work and get some momentum going.
+            <Tool title="MacOS">
+            When it comes to programming on my laptops, MacOS has become my go-to operating system. 
+            While I've been a long-time user of Windows on my main machine, I appreciate the reliability and consistency of MacOS, 
+            as well as its seamless integration with development tools and frameworks. Having MacOS as another option in my toolkit allows me to work on projects with ease, 
+            and provides an additional level of flexibility and versatility that I can't get with Windows alone.
             </Tool>
           </ToolsSection>
         </div>
