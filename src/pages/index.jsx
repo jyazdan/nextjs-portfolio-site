@@ -18,6 +18,16 @@ import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import Sharpen from '@/images/logos/sharpen.jpg'
 import QueensCollege from '@/images/logos/queens-college.png'
+import htmlLogo from '@/images/logos/html.png'
+import CssLogo from '@/images/logos/css.webp'
+import javascriptLogo from '@/images/logos/javascript.webp'
+import reactLogo from '@/images/logos/react.png'
+import nextLogo from '@/images/logos/next.png'
+import javaLogo from '@/images/logos/java.png'
+import cLogo from '@/images/logos/c++.png'
+import tailwindLogo from '@/images/logos/tailwind.png'
+import visualStudioCodeLogo from '@/images/logos/visualstudiocode.png'
+import gitLogo from '@/images/logos/git.png'
 import logoStarbucks from '@/images/logos/starbucks.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
@@ -63,7 +73,6 @@ const projects = [
     description: `Next.js-based social media application built with Tailwind CSS, Firebase v9, and NextAuth for authentication. This clone of the popular social media network, Instagram, offers a familiar and feature-rich user experience, complete with posting, liking, and commenting functionality.`,
     link: `https://instagram-clone-jyazdan.vercel.app/auth/signin?callbackUrl=https%3A%2F%2Finstagram-clone-jyazdan.vercel.app%2F`,
   },
-  
 ]
 
 function MailIcon(props) {
@@ -205,20 +214,6 @@ function Resume() {
       end: '2021',
       minor: 'Math',
     },
-    // {
-    //   company: 'Facebook',
-    //   title: 'iOS Software Engineer',
-    //   logo: logoFacebook,
-    //   start: '2011',
-    //   end: '2014',
-    // },
-    // {
-    //   company: 'Starbucks',
-    //   title: 'Shift Supervisor',
-    //   logo: logoStarbucks,
-    //   start: '2008',
-    //   end: '2011',
-    // },
   ]
 
   return (
@@ -271,6 +266,94 @@ function Resume() {
   )
 }
 
+function Skills() {
+  let skills = [
+    {
+      id: 1,
+      language: 'HTML',
+      logo: htmlLogo,
+    },
+    {
+      id: 2,
+      language: 'CSS',
+      logo: CssLogo,
+    },
+    {
+      id: 3,
+      language: 'JavaScript',
+      logo: javascriptLogo,
+    },
+    {
+      id: 5,
+      language: 'React.js',
+      logo: reactLogo
+    },
+    {
+      id: 6,
+      language: 'Next.js',
+      logo: nextLogo
+    },
+    {
+      id: 7,
+      language: 'Java',
+      logo: javaLogo
+    },
+    {
+      id: 8,
+      language: 'C++',
+      logo: cLogo
+    },
+    {
+      id: 9,
+      language: 'TailwindCSS',
+      logo: tailwindLogo
+    },
+    {
+      id: 10,
+      language: 'Visual Studio Code',
+      logo: visualStudioCodeLogo
+    },
+    {
+      id: 11,
+      language: 'Git',
+      logo: gitLogo
+    },
+  ]
+
+  return (
+    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <span className="ml-3">Skills & Technologies</span>
+      </h2>
+      <ol className="mt-6 space-y-4">
+        {skills.map((skill, roleIndex) => (
+          <li key={roleIndex} className="flex gap-4">
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <Image
+                src={skill.logo}
+                alt=""
+                className="h-7 w-7 rounded-lg"
+                unoptimized
+              />
+            </div>
+            <dl className="flex flex-auto flex-wrap gap-x-2">
+              <dt className="sr-only">Company</dt>
+              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                {skill.language}
+              </dd>
+              <dt className="sr-only">Role</dt>
+              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+                {skill.language}
+              </dd>
+            </dl>
+          </li>
+        ))}
+      </ol>
+    </div>
+  )
+}
+
 function Photos() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
@@ -303,7 +386,8 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Jonathan Yazdanpanah - Software engineer, university graduate, and car enthusiast.
+          Jonathan Yazdanpanah - Software engineer, university graduate, and car
+          enthusiast.
         </title>
         <meta
           name="description"
@@ -319,11 +403,13 @@ export default function Home() {
             Software engineer, university graduate, and tech enthusiast.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          I'm Jonathan, a results-driven software engineer based in New York City with a passion for developing 
-          cutting-edge technologies. As a tech enthusiast, I stay up-to-date with the latest trends and advancements 
-          in the field to create innovative solutions that solve complex problems and drive business growth. 
-          With my expertise in software engineering, I specialize in delivering high-quality, 
-          user-friendly solutions that exceed expectations. 
+            I'm Jonathan, a results-driven software engineer based in New York
+            City with a passion for developing cutting-edge technologies. As a
+            tech enthusiast, I stay up-to-date with the latest trends and
+            advancements in the field to create innovative solutions that solve
+            complex problems and drive business growth. With my expertise in
+            software engineering, I specialize in delivering high-quality,
+            user-friendly solutions that exceed expectations.
           </p>
           <div className="mt-6 flex items-center gap-6">
             <SocialLink
@@ -350,6 +436,7 @@ export default function Home() {
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
+            <Skills />
             <Newsletter />
           </div>
         </div>
