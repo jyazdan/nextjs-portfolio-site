@@ -7,15 +7,7 @@ import clsx from 'clsx'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  TwitterIcon,
-} from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import Sharpen from '@/images/logos/sharpen.jpg'
 import QueensCollege from '@/images/logos/queens-college.png'
 import htmlLogo from '@/images/logos/html.png'
@@ -72,6 +64,13 @@ const projects = [
     title: 'Full Stack Instagram Clone',
     description: `Next.js-based social media application built with Tailwind CSS, Firebase v9, and NextAuth for authentication. This clone of the popular social media network, Instagram, offers a familiar and feature-rich user experience, complete with posting, liking, and commenting functionality.`,
     link: `https://instagram-clone-jyazdan.vercel.app/auth/signin?callbackUrl=https%3A%2F%2Finstagram-clone-jyazdan.vercel.app%2F`,
+  },
+  {
+    id: 3,
+    heading: 'Highlight Project',
+    title: 'Github Finder',
+    description: `React-based Github User Search app that enables quick and efficient search for Github users and displays comprehensive profile information, including social links, profile stats, and repository data.`,
+    link: `https://github-finder-jyazdan.vercel.app/`,
   },
 ]
 
@@ -337,13 +336,9 @@ function Skills() {
                 unoptimized
               />
             </div>
-            <dl className="flex flex-auto flex-wrap gap-x-2">
+            <dl className="flex flex-auto flex-wrap gap-x-2 items-center">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                {skill.language}
-              </dd>
-              <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
                 {skill.language}
               </dd>
             </dl>
@@ -437,7 +432,7 @@ export default function Home() {
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Resume />
             <Skills />
-            <Newsletter />
+            {/* <Newsletter /> */}
           </div>
         </div>
       </Container>
