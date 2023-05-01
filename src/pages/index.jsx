@@ -325,7 +325,7 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Jonathan Yazdanpanah - Software engineer, university graduate, and car
+          Jonathan Yazdanpanah - Software engineer, university graduate, and tech
           enthusiast.
         </title>
         <meta
