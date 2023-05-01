@@ -34,8 +34,8 @@ export default function App({ Component, pageProps, router }) {
         <Header />
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />
-          <Analytics />
           <ToastContainer />
+          <Analytics />
         </main>
         <Footer />
       </div>
