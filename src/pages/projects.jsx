@@ -1,15 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
-import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import { GitHubIcon } from '@/components/SocialIcons'
 
 const projects = [
   {
@@ -30,7 +23,6 @@ const projects = [
     description:
       'React-based web application that utilizes Chakra UI for styling and the RAWG.io API to provide detailed information about video games. GameHub offers a sleek and intuitive interface for browsing through a vast array of game data.',
     link: { href: 'https://game-hub-jyazdan.vercel.app/', label: 'View Project' },
-    logo: logoOpenShuttle,
   },
   {
     name: 'Full Stack Instagram Clone',

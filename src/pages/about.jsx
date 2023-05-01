@@ -8,11 +8,9 @@ import { Container } from '@/components/Container'
 
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
-  TwitterIcon,
 } from '@/components/SocialIcons'
-import portraitImage from '@/images/profile.jpg'
+import portraitImage from '@/images/photos/profile.jpg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
