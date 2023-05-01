@@ -6,6 +6,9 @@ import { Header } from '@/components/Header'
 import '@/styles/tailwind.css'
 import 'focus-visible'
 
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+
 function usePrevious(value) {
   let ref = useRef()
 
@@ -30,6 +33,7 @@ export default function App({ Component, pageProps, router }) {
         <Header />
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />
+          <ToastContainer />
         </main>
         <Footer />
       </div>

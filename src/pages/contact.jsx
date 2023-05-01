@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
+import emailjs from '@emailjs/browser'
+import { toast } from 'react-toastify'
 
 function MailIcon(props) {
   return (
@@ -27,55 +28,108 @@ function MailIcon(props) {
 }
 
 export default function Contact() {
-  return (
-      <SimpleLayout
-        title="Let's Make Something Amazing Together."
-        intro={
-          <>
-            {"If you're an employer looking to hire a skilled front-end developer, I'd love to hear from you. Simply fill out the form below, or if you prefer, you can also email me directly at "}{" "}
-            <a className='text-teal-500' href="mailto:jon.yazdan@gmail.com" target="_blank" rel="noopener noreferrer">
-              jon.yazdan@gmail.com
-            </a>
-            {". Whether you're looking to discuss a project, explore new ideas, or just want to say hello, I'm here and ready to listen."}
-          </>
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+    emailjs.sendForm('service_o727s6s', 'template_s8452k9', form.current, '7kWBzm_WbavGXPlM1')
+      .then((result) => {
+          console.log(result.text)
+          console.log('Message sent')
+          toast.success('Message sent!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+        },
+        (error) => {
+          console.log(error.text)
+          toast.error('Error: something went wrong!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
         }
-      >
-        <form
-      action="/thank-you"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+      )
+  }
+
+  return (
+    <SimpleLayout
+      title="Let's Make Something Amazing Together."
+      intro={
+        <>
+          {
+            "If you're an employer looking to hire a skilled front-end developer, I'd love to hear from you. Simply fill out the form below, or if you prefer, you can also email me directly at "
+          }{' '}
+          <a
+            className="text-teal-500"
+            href="mailto:jon.yazdan@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            jon.yazdan@gmail.com
+          </a>
+          {
+            ". Whether you're looking to discuss a project, explore new ideas, or just want to say hello, I'm here and ready to listen."
+          }
+        </>
+      }
     >
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Contact</span>
-      </h2>
-      <div className="mt-6 flex flex-col items-center justify-center">
-  <input
-    type="name"
-    placeholder="Name"
-    aria-label="Name"
-    required
-    className="w-full mb-5 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-  />
-  <input
-    type="email"
-    placeholder="Email address"
-    aria-label="Email address"
-    required
-    className="w-full mb-5 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-  />
-  <textarea
-    type="message"
-    placeholder="Message"
-    aria-label="Message"
-    required
-    className="w-full mb-6 pb-20 min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-  />
-  <Button type="submit" className="mt-4 flex items-center justify-center lg:w-1/6 w-full">
-    Submit
-  </Button>
-</div>
-    </form>
-      </SimpleLayout>
-    
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+      >
+        <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+          <MailIcon className="h-6 w-6 flex-none" />
+          <span className="ml-3">Contact</span>
+        </h2>
+        <div className="mt-6 flex flex-col items-center justify-center">
+          <input
+            type="name"
+            // Name as to be the same as email.js template
+            name="user_name"
+            placeholder="Name"
+            aria-label="Name"
+            required
+            className="mb-5 w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+          />
+          <input
+            type="email"
+            // Name as to be the same as email.js template
+            name="user_email"
+            placeholder="Email address"
+            aria-label="Email address"
+            required
+            className="mb-5 w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+          />
+          <textarea
+            type="message"
+            // Name as to be the same as email.js template
+            name="message"
+            placeholder="Message"
+            aria-label="Message"
+            required
+            className="mb-6 w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] pb-20 shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+          />
+          <Button
+            type="submit"
+            className="mt-4 flex w-full items-center justify-center lg:w-1/6"
+          >
+            Submit
+          </Button>
+        </div>
+      </form>
+    </SimpleLayout>
   )
 }
