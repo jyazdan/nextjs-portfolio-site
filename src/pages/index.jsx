@@ -147,7 +147,7 @@ function Resume() {
       end: '2023',
     },
     {
-      company: 'Queens College - City Univercity of New York',
+      company: 'Queens College - City University of New York',
       title: 'Bachlors of Arts, Computer Science',
       logo: QueensCollegeLogo,
       start: '2016',
