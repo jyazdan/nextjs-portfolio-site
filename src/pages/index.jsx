@@ -102,6 +102,14 @@ function MailIcon(props) {
   )
 }
 
+function CodeIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+</svg>
+  )
+}
+
 function BriefcaseIcon(props) {
   return (
     <svg
@@ -290,44 +298,45 @@ function Skills() {
     {
       id: 5,
       language: 'React.js',
-      logo: reactLogo
+      logo: reactLogo,
     },
     {
       id: 6,
       language: 'Next.js',
-      logo: nextLogo
+      logo: nextLogo,
     },
     {
       id: 7,
       language: 'Java',
-      logo: javaLogo
+      logo: javaLogo,
     },
     {
       id: 8,
       language: 'C++',
-      logo: cLogo
+      logo: cLogo,
     },
     {
       id: 9,
       language: 'TailwindCSS',
-      logo: tailwindLogo
+      logo: tailwindLogo,
     },
     {
       id: 10,
       language: 'Visual Studio Code',
-      logo: visualStudioCodeLogo
+      logo: visualStudioCodeLogo,
     },
     {
       id: 11,
       language: 'Git',
-      logo: gitLogo
+      logo: gitLogo,
     },
   ]
+
 
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <CodeIcon className="h- w-6 flex-none" />
         <span className="ml-3">Skills & Technologies</span>
       </h2>
       <ol className="mt-6 space-y-4">
@@ -341,7 +350,7 @@ function Skills() {
                 unoptimized
               />
             </div>
-            <dl className="flex flex-auto flex-wrap gap-x-2 items-center">
+            <dl className="flex flex-auto flex-wrap items-center gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
                 {skill.language}
@@ -360,22 +369,24 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[NewYorkImage, QueensCollegeImage, image3, CodeImage, TechImage].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        ))}
+        {[NewYorkImage, QueensCollegeImage, image3, CodeImage, TechImage].map(
+          (image, imageIndex) => (
+            <div
+              key={image.src}
+              className={clsx(
+                'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+                rotations[imageIndex % rotations.length]
+              )}
+            >
+              <Image
+                src={image}
+                alt=""
+                sizes="(min-width: 640px) 18rem, 11rem"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          )
+        )}
       </div>
     </div>
   )
