@@ -9,7 +9,7 @@ import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import Sharpen from '@/images/logos/sharpen.jpg'
-import QueensCollege from '@/images/logos/queens-college.png'
+import QueensCollegeLogo from '@/images/logos/queens-college-logo.png'
 import htmlLogo from '@/images/logos/html.png'
 import CssLogo from '@/images/logos/css.webp'
 import javascriptLogo from '@/images/logos/javascript.webp'
@@ -21,12 +21,11 @@ import tailwindLogo from '@/images/logos/tailwind.png'
 import visualStudioCodeLogo from '@/images/logos/visualstudiocode.png'
 import gitLogo from '@/images/logos/git.png'
 import ComputerImage from '@/images/photos/computer.jpg'
-import QueensCollegeImage from '@/images/photos/queens-college.jpg'
+import CollegeImage from '@/images/photos/queens-college.jpg'
 import NewYorkImage from '@/images/photos/new-york.jpg'
 import CodeImage from '@/images/photos/code.jpg'
 import TechImage from '@/images/photos/tech.jpg'
 
-import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 
@@ -150,7 +149,7 @@ function Resume() {
     {
       company: 'Queens College - City Univercity of New York',
       title: 'Bachlors of Arts, Computer Science',
-      logo: QueensCollege,
+      logo: QueensCollegeLogo,
       start: '2016',
       end: '2021',
       minor: 'Math',
@@ -298,7 +297,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[NewYorkImage, QueensCollegeImage, ComputerImage, CodeImage, TechImage].map(
+        {[NewYorkImage, CollegeImage, ComputerImage, CodeImage, TechImage].map(
           (image, imageIndex) => (
             <div
               key={image.src}
