@@ -342,13 +342,8 @@ export default function Home() {
             Software engineer, university graduate, and tech enthusiast.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I'm Jonathan, a results-driven software engineer based in New York
-            City with a passion for developing cutting-edge technologies. As a
-            tech enthusiast, I stay up-to-date with the latest trends and
-            advancements in the field to create innovative solutions that solve
-            complex problems and drive business growth. With my expertise in
-            software engineering, I specialize in delivering high-quality,
-            user-friendly solutions that exceed expectations.
+          I'm Jonathan, a results-driven software engineer in NYC with a passion for developing cutting-edge technologies.
+           I specialize in delivering high-quality, user-friendly solutions that drive business growth.
           </p>
           <div className="mt-6 flex items-center gap-6">
             <SocialLink
